@@ -12,9 +12,6 @@ Plain HTML and CSS, no build step, designed to be served from GitHub Pages.
 
 ## Before deploying
 
-Swap these placeholder values in `privacy.html` and `support.html`:
-
-- `support@example.com` — replace with the real support email (both files)
 - Effective date in `privacy.html` if you want a different date than May 5, 2026
 
 ## Deploy to GitHub Pages
