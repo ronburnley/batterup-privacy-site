@@ -52,29 +52,43 @@ page to see the live URL.
 
 ### 4. Site URL
 
-The published URL will be:
+Live at the custom domain (migrated 2026-05-09):
 
 ```
-https://ronburnley.github.io/batterup-privacy-site/
+https://batterupscorebook.com/
 ```
 
 Specific pages:
 
-- `https://ronburnley.github.io/batterup-privacy-site/privacy.html`
-- `https://ronburnley.github.io/batterup-privacy-site/support.html`
+- `https://batterupscorebook.com/privacy.html`
+- `https://batterupscorebook.com/support.html`
 
-### 5. Add the privacy policy URL to App Store Connect
+The original `https://ronburnley.github.io/batterup-privacy-site/` URL
+still works — GitHub Pages 301-redirects it to the apex.
+
+### 5. Custom domain notes
+
+- Apex DNS lives in Cloudflare as a CNAME at `@` flattening to
+  `ronburnley.github.io`, plus a `www` CNAME doing the same. Cloudflare
+  proxy is set to **DNS only** (gray cloud) — proxying through
+  Cloudflare adds failure modes around Let's Encrypt renewal and gives
+  this static site nothing useful.
+- HTTPS cert is auto-provisioned and renewed by GitHub via Let's
+  Encrypt. "Enforce HTTPS" is enabled in repo Settings → Pages.
+- The `CNAME` file at repo root pins the custom domain so GitHub
+  doesn't drop the binding on a redeploy.
+
+### 6. Add the privacy policy URL to App Store Connect
 
 1. Sign in to [App Store Connect](https://appstoreconnect.apple.com/)
 2. Open the **BatterUp** app record
 3. Go to **App Information** in the left sidebar
 4. Scroll to **General Information** → **Privacy Policy URL**
-5. Paste `https://ronburnley.github.io/batterup-privacy-site/privacy.html`
+5. Paste `https://batterupscorebook.com/privacy.html`
 6. Click **Save**
 
-You can use the same domain for the optional **Support URL** field
-(`https://ronburnley.github.io/batterup-privacy-site/support.html`), which is required
-when you submit a build for review.
+The optional **Support URL** field (required when submitting for
+review) takes `https://batterupscorebook.com/support.html`.
 
 ## Updates
 
